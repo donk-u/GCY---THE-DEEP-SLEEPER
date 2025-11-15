@@ -124,18 +124,32 @@ function initStatsCounter() {
     stats.forEach(stat => observer.observe(stat));
 }
 
+// ✅ 弹性缓动函数
+function easeOutCubic(t) {
+    return 1 - Math.pow(1 - t, 3);
+}
+
 function animateNumber(element, target) {
-    let current = 0;
-    const increment = target / 50;
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            element.textContent = target + (target === 7300 ? '+' : target === 20 ? '+' : '');
-            clearInterval(timer);
+    const suffix = target === 7300 ? '+' : target === 20 ? '+' : '';
+    const duration = 2000;
+    const startTime = performance.now();
+    
+    const animate = (currentTime) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = easeOutCubic(progress);
+        
+        const current = target * eased;
+        element.textContent = Math.floor(current) + suffix;
+        
+        if (progress < 1) {
+            requestAnimationFrame(animate);
         } else {
-            element.textContent = Math.floor(current);
+            element.textContent = target + suffix;
         }
-    }, 30);
+    };
+    
+    requestAnimationFrame(animate);
 }
 
 // 🔄 滚动动画
@@ -237,3 +251,57 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// 😴 睡眠模式：页面闲置3分钟后进入"睡眠模式"
+let sleepTimer;
+function resetSleepTimer() {
+    clearTimeout(sleepTimer);
+    const heroTitle = document.querySelector('.hero-title');
+    if (heroTitle) {
+        heroTitle.innerHTML = '<span class="title-line">DEEP SLEEPER</span><span class="title-line highlight">SLEEP ENGINEER</span>';
+    }
+    document.body.style.filter = '';
+    
+    sleepTimer = setTimeout(() => {
+        document.body.style.filter = 'blur(2px) brightness(0.5)';
+        if (heroTitle) {
+            heroTitle.innerHTML = '<span class="title-line highlight">Zzz...</span>';
+        }
+    }, 180000); // 3分钟
+}
+
+document.addEventListener('mousemove', resetSleepTimer);
+document.addEventListener('keypress', resetSleepTimer);
+document.addEventListener('scroll', resetSleepTimer);
+resetSleepTimer(); // 初始化
+
+// 📊 睡眠指数显示
+function updateSleepIndex() {
+    const sleepIndexEl = document.querySelector('.sleep-index');
+    if (!sleepIndexEl) return;
+    
+    const now = new Date();
+    const hour = now.getHours();
+    let sleepIndex;
+    
+    if (hour >= 22 || hour <= 6) {
+        sleepIndex = "深度睡眠黄金期";
+    } else if (hour >= 13 && hour <= 14) {
+        sleepIndex = "午休能量补给站";
+    } else {
+        sleepIndex = "清醒状态";
+    }
+    
+    sleepIndexEl.textContent = `此刻：${sleepIndex}`;
+}
+
+// 初始化睡眠指数
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        updateSleepIndex();
+        setInterval(updateSleepIndex, 60000);
+    });
+} else {
+    updateSleepIndex();
+    setInterval(updateSleepIndex, 60000);
+}

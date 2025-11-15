@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- 🎵 白噪音音频 -->
+    <audio id="sleepAmbient" loop>
+        <source src="https://cdn.freesound.org/previews/316/316626_5123451-lq.mp3" type="audio/mpeg">
+    </audio>
 </head>
 <body>
     <!-- 🎬 加载动画 -->
@@ -50,7 +55,7 @@
             </h1>
             <p class="hero-subtitle" id="subtitle"></p>
             <div class="hero-meta">
-                <span>BASED IN WUT</span>
+                <span class="location" data-full="Wuhan University of Technology">BASED IN WUT</span>
                 <span class="meta-divider">•</span>
                 <span>SINCE 2024</span>
             </div>
@@ -131,6 +136,11 @@
                     <div class="portfolio-info">
                         <h3>智能睡眠舱系统</h3>
                         <p>AI驱动的个性化睡眠环境调节</p>
+                        <div class="project-tags">
+                            <span class="tag">💤 深度睡眠</span>
+                            <span class="tag">🌙 梦境重构</span>
+                            <span class="tag">⏰ REM优化</span>
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item">
@@ -138,6 +148,11 @@
                     <div class="portfolio-info">
                         <h3>梦境可视化平台</h3>
                         <p>将脑波数据转化为沉浸式视觉体验</p>
+                        <div class="project-tags">
+                            <span class="tag">💤 深度睡眠</span>
+                            <span class="tag">🌙 梦境重构</span>
+                            <span class="tag">⏰ REM优化</span>
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item">
@@ -145,6 +160,11 @@
                     <div class="portfolio-info">
                         <h3>云端睡眠档案馆</h3>
                         <p>基于区块链的睡眠数据确权与交易</p>
+                        <div class="project-tags">
+                            <span class="tag">💤 深度睡眠</span>
+                            <span class="tag">🌙 梦境重构</span>
+                            <span class="tag">⏰ REM优化</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -157,13 +177,77 @@
             <h2 class="section-title">Connect</h2>
             <p class="contact-desc">Currently accepting sleep consultation requests</p>
             <div class="contact-links">
-                <a href="mailto:1762079094@qq.com" class="contact-link">1762079094@qq.com</a>
+                <a href="mailto:1762079094@qq.com" class="contact-link" id="emailLink" onclick="copyEmail(event); return false;">1762079094@qq.com</a>
                 <a href="https://github.com/sleeper" target="_blank" class="contact-link">GitHub</a>
                 <a href="https://wechat.com/sleeper" target="_blank" class="contact-link">WeChat</a>
             </div>
         </div>
     </section>
 
+    <!-- 📊 睡眠指数显示 -->
+    <div class="sleep-index"></div>
+
     <script src="script.js"></script>
+    <script>
+        // 📧 邮箱复制功能
+        function copyEmail(event) {
+            const email = '1762079094@qq.com';
+            const link = event.target;
+            const originalText = link.textContent;
+            
+            // 尝试使用 Clipboard API
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(email).then(() => {
+                    link.textContent = '📧 邮箱已复制！';
+                    link.classList.add('copied');
+                    setTimeout(() => {
+                        link.textContent = originalText;
+                        link.classList.remove('copied');
+                    }, 2000);
+                }).catch(() => {
+                    // 如果 Clipboard API 失败，使用备用方法
+                    fallbackCopy(email, link, originalText);
+                });
+            } else {
+                // 备用复制方法
+                fallbackCopy(email, link, originalText);
+            }
+        }
+        
+        function fallbackCopy(text, link, originalText) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.opacity = '0';
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                link.textContent = '📧 邮箱已复制！';
+                link.classList.add('copied');
+                setTimeout(() => {
+                    link.textContent = originalText;
+                    link.classList.remove('copied');
+                }, 2000);
+            } catch (err) {
+                link.textContent = '📧 点击打开邮箱';
+                setTimeout(() => {
+                    link.textContent = originalText;
+                }, 2000);
+            }
+            document.body.removeChild(textArea);
+        }
+        
+        // 🎵 用户首次交互后播放白噪音
+        document.body.addEventListener('click', () => {
+            const audio = document.getElementById('sleepAmbient');
+            if (audio) {
+                audio.volume = 0.1;
+                audio.play().catch(err => {
+                    console.log('音频播放失败:', err);
+                });
+            }
+        }, { once: true });
+    </script>
 </body>
 </html>
