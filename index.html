@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Deep Sleeper | 睡眠工程师 | 构建雅致高效的睡眠体系">
+    <title>Deep Sleeper | 睡眠工程师</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 🎬 加载动画 -->
+    <div id="loader">
+        <div class="loader-circle"></div>
+    </div>
+
+    <!-- 📱 移动端菜单按钮 -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <span></span><span></span><span></span>
+    </button>
+
+    <!-- 🎯 左侧垂直导航 -->
+    <nav class="sidebar" id="sidebar">
+        <div class="nav-logo">Z</div>
+        <ul class="nav-menu">
+            <li><a href="#home" data-text="Home">01</a></li>
+            <li><a href="#about" data-text="About">02</a></li>
+            <li><a href="#services" data-text="Services">03</a></li>
+            <li><a href="#portfolio" data-text="Portfolio">04</a></li>
+            <li><a href="#contact" data-text="Contact">05</a></li>
+        </ul>
+        <div class="nav-footer">© 2024</div>
+    </nav>
+
+    <!-- 🎭 英雄区域 -->
+    <section class="hero" id="home">
+        <div class="hero-visual">
+            <img src="hero-bg.jpg" alt="Background" class="hero-bg">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="profile-visual">
+                <img src="Profile.png" alt="Deep Sleeper" class="profile-img" id="profileImg" onerror="this.onerror=null; this.style.display='none';">
+                <div class="profile-ring"></div>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">DEEP SLEEPER</span>
+                <span class="title-line highlight">SLEEP ENGINEER</span>
+            </h1>
+            <p class="hero-subtitle" id="subtitle"></p>
+            <div class="hero-meta">
+                <span>BASED IN WUT</span>
+                <span class="meta-divider">•</span>
+                <span>SINCE 2024</span>
+            </div>
+            <button class="cta-button">
+                <span>探索睡眠艺术</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+            </button>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- 📊 数据展示 -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="7300">0</div>
+                    <div class="stat-label">已完成睡觉</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="20">0</div>
+                    <div class="stat-label">年从业经验</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">客户满意度</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🎯 关于我 -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p class="about-intro">热衷的睡觉崇拜者，专注于构建雅致高效的睡眠体系。</p>
+                <p class="about-desc">我擅长于构建现代睡觉体系，将睡姿美观和安静融为一体，凭借在学校学习的专业知识，我可以通过简洁的方式把睡觉体验付诸现实。我的工作方法融合了传统的睡眠优越性和现代的技术卓越性，确保每次睡觉不仅满足需求，更超出预期。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📊 睡眠服务体系 -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Sleep Architecture</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-number">01</div>
+                    <h3>硬床 · 软床 · 枕头被子优化</h3>
+                    <p>构建可安睡床铺，从底层架构保障睡眠质量</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-number">02</div>
+                    <h3>纳米级精准实现</h3>
+                    <p>流畅入睡体验，无障碍梦游设计，让每个睡姿都优雅</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-number">03</div>
+                    <h3>全线解决方案</h3>
+                    <p>Node.js、数据库SQL设计、API开发、云部署（梦里也会）</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🎨 睡眠项目案例 -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h2 class="section-title">Dream Projects</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=600&fit=crop" alt="Project 1">
+                    <div class="portfolio-info">
+                        <h3>智能睡眠舱系统</h3>
+                        <p>AI驱动的个性化睡眠环境调节</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1531353826977-0941b4779a1c?w=800&h=600&fit=crop" alt="Project 2">
+                    <div class="portfolio-info">
+                        <h3>梦境可视化平台</h3>
+                        <p>将脑波数据转化为沉浸式视觉体验</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1511295742362-92c96b1cf484?w=800&h=600&fit=crop" alt="Project 3">
+                    <div class="portfolio-info">
+                        <h3>云端睡眠档案馆</h3>
+                        <p>基于区块链的睡眠数据确权与交易</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 💬 联系 -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Connect</h2>
+            <p class="contact-desc">Currently accepting sleep consultation requests</p>
+            <div class="contact-links">
+                <a href="mailto:1762079094@qq.com" class="contact-link">1762079094@qq.com</a>
+                <a href="https://github.com/sleeper" target="_blank" class="contact-link">GitHub</a>
+                <a href="https://wechat.com/sleeper" target="_blank" class="contact-link">WeChat</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
