@@ -83,10 +83,45 @@ function initAll() {
         initMobileMenu();
         initProfileInteraction();
         initStatsCounter();
+        initCTAButton();
+        initSleepSliders();
     } catch (error) {
         console.error('初始化错误:', error);
         // 即使出错也隐藏加载动画
         hideLoader();
+    }
+}
+
+// 🎯 CTA按钮功能
+function initCTAButton() {
+    const ctaButton = document.querySelector('.cta-button');
+    if (ctaButton) {
+        ctaButton.addEventListener('click', () => {
+            const aboutSection = document.getElementById('about');
+            if (aboutSection) {
+                aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    }
+}
+
+// 😴 睡眠滑块实时更新
+function initSleepSliders() {
+    const durationSlider = document.getElementById('sleepDuration');
+    const qualitySlider = document.getElementById('sleepQuality');
+    const durationValue = document.getElementById('durationValue');
+    const qualityValue = document.getElementById('qualityValue');
+    
+    if (durationSlider && durationValue) {
+        durationSlider.addEventListener('input', () => {
+            durationValue.textContent = `${durationSlider.value}h`;
+        });
+    }
+    
+    if (qualitySlider && qualityValue) {
+        qualitySlider.addEventListener('input', () => {
+            qualityValue.textContent = qualitySlider.value;
+        });
     }
 }
 

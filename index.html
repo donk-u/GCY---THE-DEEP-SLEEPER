@@ -2,17 +2,67 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Deep Sleeper | 睡眠工程师 | 构建雅致高效的睡眠体系">
-    <title>Deep Sleeper | 睡眠工程师</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="title" content="Deep Sleeper | 睡眠工程师">
+    <meta name="description" content="专业睡眠工程师，提供深度睡眠优化、梦境设计、床铺架构服务。已帮助7300+人改善睡眠质量。">
+    <meta name="keywords" content="睡眠优化,深度睡眠,梦境设计,睡眠工程师">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Deep Sleeper">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sleep-engineer.com/">
+    <meta property="og:title" content="Deep Sleeper | 睡眠工程师">
+    <meta property="og:description" content="专业睡眠工程师，提供深度睡眠优化服务">
+    <meta property="og:image" content="/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://sleep-engineer.com/">
+    <meta property="twitter:title" content="Deep Sleeper | 睡眠工程师">
+    <meta property="twitter:description" content="专业睡眠工程师，提供深度睡眠优化服务">
+    <meta property="twitter:image" content="/images/og-image.jpg">
+    
+    <title>Deep Sleeper | 睡眠工程师 | 构建雅致高效的睡眠体系</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Profile.png">
+    <link rel="apple-touch-icon" href="Profile.png">
+    
+    <!-- 样式表 -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="components.css">
+    
+    <!-- 字体预加载 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     
     <!-- 🎵 白噪音音频 -->
-    <audio id="sleepAmbient" loop>
+    <audio id="sleepAmbient" loop preload="auto">
         <source src="https://cdn.freesound.org/previews/316/316626_5123451-lq.mp3" type="audio/mpeg">
+        <source src="https://cdn.freesound.org/previews/316/316626_5123451-lq.ogg" type="audio/ogg">
     </audio>
+    
+    <!-- JSON-LD结构化数据 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Deep Sleeper",
+      "description": "专业睡眠工程师",
+      "url": "https://sleep-engineer.com",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "1762079094@qq.com",
+        "contactType": "睡眠咨询"
+      }
+    }
+    </script>
 </head>
 <body>
     <!-- 🎬 加载动画 -->
@@ -21,33 +71,33 @@
     </div>
 
     <!-- 📱 移动端菜单按钮 -->
-    <button class="mobile-menu-btn" id="mobileMenuBtn">
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="打开导航菜单" aria-expanded="false">
         <span></span><span></span><span></span>
     </button>
 
     <!-- 🎯 左侧垂直导航 -->
-    <nav class="sidebar" id="sidebar">
-        <div class="nav-logo">Z</div>
+    <nav class="sidebar" id="sidebar" role="navigation" aria-label="主导航">
+        <div class="nav-logo" aria-label="网站标识">Z</div>
         <ul class="nav-menu">
-            <li><a href="#home" data-text="Home">01</a></li>
-            <li><a href="#about" data-text="About">02</a></li>
-            <li><a href="#services" data-text="Services">03</a></li>
-            <li><a href="#portfolio" data-text="Portfolio">04</a></li>
-            <li><a href="#contact" data-text="Contact">05</a></li>
+            <li><a href="#home" data-text="Home" aria-label="首页">01</a></li>
+            <li><a href="#about" data-text="About" aria-label="关于我">02</a></li>
+            <li><a href="#services" data-text="Services" aria-label="服务">03</a></li>
+            <li><a href="#portfolio" data-text="Portfolio" aria-label="作品集">04</a></li>
+            <li><a href="#contact" data-text="Contact" aria-label="联系">05</a></li>
         </ul>
-        <div class="nav-footer">© 2024</div>
+        <div class="nav-footer" aria-label="版权信息">© 2024</div>
     </nav>
 
     <!-- 🎭 英雄区域 -->
     <section class="hero" id="home">
         <div class="hero-visual">
-            <img src="hero-bg.jpg" alt="Background" class="hero-bg">
-            <div class="hero-overlay"></div>
+            <img src="hero-bg.jpg" alt="睡眠主题背景图" class="hero-bg" loading="eager">
+            <div class="hero-overlay" aria-hidden="true"></div>
         </div>
         <div class="hero-content">
             <div class="profile-visual">
-                <img src="Profile.png" alt="Deep Sleeper" class="profile-img" id="profileImg" onerror="this.onerror=null; this.style.display='none';">
-                <div class="profile-ring"></div>
+                <img src="Profile.png" alt="Deep Sleeper - 睡眠工程师个人头像" class="profile-img" id="profileImg" loading="eager" onerror="this.onerror=null; this.style.display='none';">
+                <div class="profile-ring" aria-hidden="true"></div>
             </div>
             <h1 class="hero-title">
                 <span class="title-line">DEEP SLEEPER</span>
@@ -59,9 +109,9 @@
                 <span class="meta-divider">•</span>
                 <span>SINCE 2024</span>
             </div>
-            <button class="cta-button">
+            <button class="cta-button" aria-label="探索睡眠艺术" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
                 <span>探索睡眠艺术</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                     <path d="M7 17L17 7M17 7H7M17 7V17"/>
                 </svg>
             </button>
@@ -132,38 +182,38 @@
             <h2 class="section-title">Dream Projects</h2>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=600&fit=crop" alt="Project 1">
+                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=600&fit=crop" alt="智能睡眠舱系统项目展示图" loading="lazy">
                     <div class="portfolio-info">
                         <h3>智能睡眠舱系统</h3>
                         <p>AI驱动的个性化睡眠环境调节</p>
-                        <div class="project-tags">
-                            <span class="tag">💤 深度睡眠</span>
-                            <span class="tag">🌙 梦境重构</span>
-                            <span class="tag">⏰ REM优化</span>
+                        <div class="project-tags" role="list">
+                            <span class="tag" role="listitem">💤 深度睡眠</span>
+                            <span class="tag" role="listitem">🌙 梦境重构</span>
+                            <span class="tag" role="listitem">⏰ REM优化</span>
                         </div>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1531353826977-0941b4779a1c?w=800&h=600&fit=crop" alt="Project 2">
+                    <img src="https://images.unsplash.com/photo-1531353826977-0941b4779a1c?w=800&h=600&fit=crop" alt="梦境可视化平台项目展示图" loading="lazy">
                     <div class="portfolio-info">
                         <h3>梦境可视化平台</h3>
                         <p>将脑波数据转化为沉浸式视觉体验</p>
-                        <div class="project-tags">
-                            <span class="tag">💤 深度睡眠</span>
-                            <span class="tag">🌙 梦境重构</span>
-                            <span class="tag">⏰ REM优化</span>
+                        <div class="project-tags" role="list">
+                            <span class="tag" role="listitem">💤 深度睡眠</span>
+                            <span class="tag" role="listitem">🌙 梦境重构</span>
+                            <span class="tag" role="listitem">⏰ REM优化</span>
                         </div>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1511295742362-92c96b1cf484?w=800&h=600&fit=crop" alt="Project 3">
+                    <img src="https://images.unsplash.com/photo-1511295742362-92c96b1cf484?w=800&h=600&fit=crop" alt="云端睡眠档案馆项目展示图" loading="lazy">
                     <div class="portfolio-info">
                         <h3>云端睡眠档案馆</h3>
                         <p>基于区块链的睡眠数据确权与交易</p>
-                        <div class="project-tags">
-                            <span class="tag">💤 深度睡眠</span>
-                            <span class="tag">🌙 梦境重构</span>
-                            <span class="tag">⏰ REM优化</span>
+                        <div class="project-tags" role="list">
+                            <span class="tag" role="listitem">💤 深度睡眠</span>
+                            <span class="tag" role="listitem">🌙 梦境重构</span>
+                            <span class="tag" role="listitem">⏰ REM优化</span>
                         </div>
                     </div>
                 </div>
@@ -177,16 +227,114 @@
             <h2 class="section-title">Connect</h2>
             <p class="contact-desc">Currently accepting sleep consultation requests</p>
             <div class="contact-links">
-                <a href="mailto:1762079094@qq.com" class="contact-link" id="emailLink" onclick="copyEmail(event); return false;">1762079094@qq.com</a>
-                <a href="https://github.com/sleeper" target="_blank" class="contact-link">GitHub</a>
-                <a href="https://wechat.com/sleeper" target="_blank" class="contact-link">WeChat</a>
+                <a href="mailto:1762079094@qq.com" class="contact-link" id="emailLink" onclick="copyEmail(event); return false;" aria-label="复制邮箱地址">1762079094@qq.com</a>
+                <a href="https://github.com/sleeper" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="访问GitHub主页">GitHub</a>
+                <a href="https://wechat.com/sleeper" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="访问微信主页">WeChat</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 💬 留言板区域 -->
+    <section class="guestbook-section" id="guestbook">
+        <div class="container guestbook-container">
+            <h2 class="section-title">💬 留言板</h2>
+            
+            <!-- 留言表单 -->
+            <form class="guestbook-form" id="guestbookForm" novalidate aria-label="留言表单">
+                <div class="form-group">
+                    <label class="form-label" for="guestName">姓名 *</label>
+                    <input type="text" id="guestName" class="form-input" placeholder="请输入您的姓名" required aria-required="true" minlength="1" maxlength="50" autocomplete="name">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="guestEmail">邮箱</label>
+                    <input type="email" id="guestEmail" class="form-input" placeholder="选填，不会公开" aria-required="false" autocomplete="email">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="guestMessage">留言 *</label>
+                    <textarea id="guestMessage" class="form-textarea" placeholder="分享您的睡眠故事..." required aria-required="true" minlength="5" maxlength="500" rows="5"></textarea>
+                </div>
+                <button type="submit" class="form-button" aria-label="提交留言">
+                    <span>提交留言</span>
+                    <span aria-hidden="true">📝</span>
+                </button>
+            </form>
+            
+            <!-- 留言列表 -->
+            <div class="guestbook-list" id="guestbookList">
+                <h3>访客留言</h3>
+                <div class="guestbook-messages" id="guestbookMessages">
+                    <!-- 留言将在这里动态加载 -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 😴 睡眠数据记录 -->
+    <section class="sleep-tracker-section" id="sleep-tracker">
+        <div class="container sleep-tracker-container">
+            <h2 class="section-title">😴 睡眠记录</h2>
+            
+            <form class="sleep-tracker-form" id="sleepForm" novalidate aria-label="睡眠记录表单">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="sleepDuration">睡眠时长 (小时) *</label>
+                        <div class="slider-container">
+                            <input type="range" id="sleepDuration" class="slider" min="0" max="12" step="0.5" value="7" required aria-required="true" aria-label="睡眠时长滑块" aria-valuemin="0" aria-valuemax="12" aria-valuenow="7">
+                            <span class="slider-value" id="durationValue" aria-live="polite">7.0h</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="sleepQuality">睡眠质量 (1-10) *</label>
+                        <div class="slider-container">
+                            <input type="range" id="sleepQuality" class="slider" min="1" max="10" step="1" value="7" required aria-required="true" aria-label="睡眠质量滑块" aria-valuemin="1" aria-valuemax="10" aria-valuenow="7">
+                            <span class="slider-value" id="qualityValue" aria-live="polite">7</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="sleepNotes">备注</label>
+                    <textarea id="sleepNotes" class="form-textarea" placeholder="记录今天的睡眠感受..." maxlength="200" rows="4" aria-required="false"></textarea>
+                </div>
+                <button type="submit" class="form-button" aria-label="提交睡眠记录">
+                    <span>记录睡眠</span>
+                    <span aria-hidden="true">💤</span>
+                </button>
+            </form>
+            
+            <!-- 睡眠统计 -->
+            <div class="sleep-stats" id="sleepStats">
+                <h3>睡眠统计</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number" id="totalSleeps">0</div>
+                        <div class="stat-label">记录次数</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="avgDuration">0</div>
+                        <div class="stat-label">平均时长(h)</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="avgQuality">0</div>
+                        <div class="stat-label">平均质量</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- 📊 睡眠指数显示 -->
-    <div class="sleep-index"></div>
+    <div class="sleep-index" aria-hidden="true"></div>
 
+    <!-- Noscript 提示 -->
+    <noscript>
+        <div style="position: fixed; top: 0; left: 0; width: 100%; background: #ff4444; color: white; padding: 1rem; text-align: center; z-index: 10000;">
+            此网站需要启用JavaScript才能正常运行。请启用JavaScript后刷新页面。
+        </div>
+    </noscript>
+
+    <!-- 引入交互功能模块（按顺序加载） -->
+    <script src="api.js"></script>
+    <script src="interactions.js"></script>
     <script src="script.js"></script>
     <script>
         // 📧 邮箱复制功能
@@ -239,15 +387,37 @@
         }
         
         // 🎵 用户首次交互后播放白噪音
-        document.body.addEventListener('click', () => {
+        let audioInitialized = false;
+        function initAudio() {
+            if (audioInitialized) return;
+            audioInitialized = true;
+            
             const audio = document.getElementById('sleepAmbient');
             if (audio) {
                 audio.volume = 0.1;
-                audio.play().catch(err => {
-                    console.log('音频播放失败:', err);
-                });
+                const playPromise = audio.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(err => {
+                        console.log('音频播放失败:', err);
+                    });
+                }
             }
-        }, { once: true });
+        }
+        
+        // 监听用户交互
+        ['click', 'touchstart', 'keydown'].forEach(eventType => {
+            document.body.addEventListener(eventType, initAudio, { once: true, passive: true });
+        });
+        
+        // 错误处理
+        window.addEventListener('error', (event) => {
+            console.error('页面错误:', event.error);
+        });
+        
+        // 未处理的Promise拒绝
+        window.addEventListener('unhandledrejection', (event) => {
+            console.error('未处理的Promise拒绝:', event.reason);
+        });
     </script>
 </body>
 </html>

@@ -1,0 +1,21 @@
+=== 睡眠咨询系统部署清单 ===
+
+📂 1. 检查项目结构...
+   ✅ sleep-consultation.html
+   ✅ sleep-consultation.js
+   ✅ cloudfunctions/submit-contact/index.js
+   ✅ cloudfunctions/submit-contact/package.json
+   ✅ cloudfunctions/submit-sleep-log/index.js
+   ✅ cloudfunctions/submit-sleep-log/package.json
+   ✅ cloudfunctions/calculate-sleep/index.js
+   ✅ cloudfunctions/calculate-sleep/package.json
+
+☁️ 2. 检查云函数文件...
+
+🔍 检查云函数: submit-contact
+   📦 依赖: wx-server-sdk
+   ✅ 入口函数正确
+   ✅ CORS 配置正确
+
+🔍 检查云函数: submit-sleep-log
+   📦 依赖: wx-server-sdk

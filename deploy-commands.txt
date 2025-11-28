@@ -1,0 +1,14 @@
+# CloudBase 部署指令
+# 请在命令行中逐步执行以下命令:
+
+# 1. 登录 CloudBase (会打开浏览器)
+cloudbase login
+
+# 2. 部署云函数
+cloudbase functions:deploy
+
+# 3. 部署静态网站
+cloudbase hosting deploy index.html style.css script.js Profile.png hero-bg.jpg
+
+# 4. 查看部署状态
+cloudbase hosting list
